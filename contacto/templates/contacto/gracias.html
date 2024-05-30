@@ -1,0 +1,18 @@
+<html>
+
+    <body>
+        <h1>Gracias por enviar la informacion</h1>
+        <p>redirgido en <span id="counter">3</span> </p>
+        <script>
+            setInterval(function() {
+                var div = document.querySelector("#counter");
+                var count = div.textContent * 1 - 1;
+                div.textContent = count;
+                if (count <= 0) {
+                    window.location.replace(""); //aca me redirige a donde estaba
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>
+

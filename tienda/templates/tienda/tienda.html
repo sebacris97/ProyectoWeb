@@ -1,0 +1,63 @@
+
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+
+  <div style="float:right;">
+  {% if request.user.is_authenticated %}
+    {% include "carro/widget.html" %}
+  {% else %}
+    </br>
+    <div class="alert alert-danger text-center">Logueate para ver el carro</div>
+  {% endif %}
+  </div>
+
+  <div class="row">
+
+  {% for producto in productos %}
+
+  <div class="col-md-3">
+
+  <div class="card" style="width: 100%;margin: 5px 5px;">
+    <img class="card-img-top" src="{{producto.imagen.url}}">
+
+    <div class="card-body" style="text-align: center;">
+      <h7 class="card-title">{{producto.nombre}}</h7>
+      <p class="card-text">$&nbsp;{{producto.precio}}</p>
+    </div><!--card-body que se cierra-->
+
+    <div class="card-footer text-center">
+       <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
+    </div><!--cierre card-footer-->
+
+  </div><!--card que se cierra-->
+
+  </div><!--col que se cierra-->
+
+  {% endfor %}
+
+  </div><!--row que se cierra-->
+
+</div><!--container que se cierra-->
+
+
+<section>
+
+
+  <div style="text-align:center;color:white;margin:auto; width:75%;">
+  <p>Categorias: 
+  {% for categoria in categorias %}
+  <a href="{% url 'tienda:Categoria' categoria.id %}" class="linksCategorias">{{categoria.nombre}}</a>&nbsp;&nbsp;&nbsp;
+  {% endfor %}
+  </p>
+  </div>
+
+</section>
+
+
+{% endblock %}
