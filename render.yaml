@@ -1,5 +1,5 @@
 databases:
-  - name: ProyectoWebdb
+  - name: ProyectoWeb
     plan: free
     databaseName: ProyectoWeb
     user: ProyectoWeb
