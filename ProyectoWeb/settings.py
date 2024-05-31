@@ -125,11 +125,12 @@ DATABASES = {
         'NAME': 'koyebdb',
         'USER': 'koyeb-adm',
         'PASSWORD': 'vXVd1fRqblZ9',
+        #'PASSWORD': '',
         'HOST': 'ep-noisy-recipe-a4zdcgf6.us-east-1.pg.koyeb.app',
         'OPTIONS': {'sslmode': 'require'},
     }
 }
-DATABASES['PASSWORD'] = os.environ.get('DATABASE_PASSWORD',default = 'your secret database key')
+#DATABASES['PASSWORD'] = os.environ.get('DATABASE_PASSWORD',default = 'your secret database key')
 
 
 # Password validation
