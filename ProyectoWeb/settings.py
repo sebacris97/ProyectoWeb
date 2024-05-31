@@ -129,7 +129,7 @@ DATABASES = {
         'OPTIONS': {'sslmode': 'require'},
     }
 }
-
+DATABASES['PASSWORD'] = os.environ.get('DATABASE_PASSWORD',default = 'your secret database key')
 
 
 # Password validation
