@@ -210,3 +210,6 @@ MESSAGE_TAGS = {
     error_messages.WARNING: 'warning',
     error_messages.ERROR: 'danger',
 }
+
+
+LOGIN_REDIRECT_URL = ''
