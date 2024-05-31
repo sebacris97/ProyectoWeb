@@ -1,1 +1,2 @@
-web: yarn start:production
+release: python manage.py migrate
+web: gunicorn ProyectoWeb.wsgi
