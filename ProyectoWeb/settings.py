@@ -124,13 +124,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'koyebdb',
         'USER': 'koyeb-adm',
-        'PASSWORD': 'vXVd1fRqblZ9',
-        #'PASSWORD': '',
+        'PASSWORD': '',
         'HOST': 'ep-noisy-recipe-a4zdcgf6.us-east-1.pg.koyeb.app',
         'OPTIONS': {'sslmode': 'require'},
     }
 }
-#DATABASES['PASSWORD'] = os.environ.get('DATABASE_PASSWORD',default = 'your secret database key')
+
+
+DATABASES['default']['PASSWORD'] = os.environ.get('DATABASE_PASSWORD',default = 'your secret database key')
 
 
 # Password validation
@@ -192,8 +193,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_HOST = 'smtp.mailersend.net'
-EMAIL_HOST_USER = 'MS_T6ibfv@trial-351ndgwyk7rlzqx8.mlsender.net'
-EMAIL_HOST_PASSWORD = "TIznJnYJarU99iS9"
+
+
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
